@@ -4,7 +4,7 @@ pragma solidity 0.8.0;
 import {Ownable} from "https://github.com/aloycwl/Util.sol/blob/main/Access/Ownable.sol";
 import {Check} from "https://github.com/aloycwl/Util.sol/blob/main/Security/Check.sol";
 
-contract Mintable is Ownable, Check {
+contract Burnable is Ownable, Check {
 
     function burn (uint amt) external {
         assembly {
