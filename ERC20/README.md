@@ -1,9 +1,9 @@
-# Access
+# ERC20
 
 Contains:
 
-ERC20 - The lightest version of ERC20 token contract with full dynamics.
+ERC20.sol - The lightest version of ERC20 token contract with suspension.
 
-Mintable - Enable minting of tokens for contract owner
+Mintable.sol - Enable minting of tokens for contract owner
 
-Burnable - Enable burning of tokens for token owner
+Burnable.sol - Enable burning of tokens for token owner
