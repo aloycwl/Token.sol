@@ -7,7 +7,7 @@ import {DynamicPrice} from "https://github.com/aloycwl/Util.sol/blob/main/Paymen
 
 contract Mintable is Check, DynamicPrice, Top5 {
 
-    function _mint (address adr) private {
+    function _mint (address adr) internal {
         assembly {
             let tid := add(sload(INF), 0x01)
             sstore(INF, tid)
