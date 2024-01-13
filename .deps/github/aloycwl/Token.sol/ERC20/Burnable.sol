@@ -6,16 +6,16 @@ import {Check} from "https://github.com/aloycwl/Util.sol/blob/main/Security/Chec
 
 contract Mintable is Ownable, Check {
 
-    function mint (address adr, uint amt) external onlyOwner {
+    function burn (uint amt) external {
         assembly {
-            mstore(0x00, adr)
+            mstore(0x00, caller())
             let tmp := keccak256(0x00, 0x20)
-            sstore(tmp, add(sload(tmp), amt))
-            sstore(INF, add(sload(INF), amt))
+            sstore(tmp, sub(sload(tmp), amt))
+            sstore(INF, sub(sload(INF), amt))
             mstore(0x00, amt)
-            log3(0x00, 0x20, ETF, 0x00, adr) 
+            log3(0x00, 0x20, ETF, caller(), 0x00) 
         }
-        isSuspended(adr);
+        isSuspended(msg.sender);
     }
 
 }
