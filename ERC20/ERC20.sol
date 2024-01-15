@@ -79,7 +79,7 @@ contract ERC20 is Ownable, Check, Mintable, Burnable {
             tmp := keccak256(0x00, 0x20)
             sstore(tmp, add(sload(tmp), amt))
 
-            mstore(0x00, amt) // emit Transfer(adr, ad2, amt)
+            mstore(0x00, amt)
             log3(0x00, 0x20, ETF, caller(), adr)
             bol := 0x01
         }
